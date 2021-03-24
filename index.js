@@ -77,6 +77,7 @@ inquirer
 .then((answer) => {
     const manager = new Manager(
         answer.name,
+        answer.role,
         answer.id,
         answer.email,
         dep = (`Room Number: ` + answer.roomNumber),
@@ -114,6 +115,7 @@ inquirer
 .then((answer) => {
     const engineer = new Engineer (
         answer.name,
+        answer.role,
         answer.id,
         answer.email,
         dep = (`Github: ` + `<a href="http://www.github.com/` + answer.github +`">` + answer.github + `</a>`)
@@ -153,6 +155,7 @@ inquirer
 .then((answer) => {
     const intern = new Intern (
         answer.name,
+        answer.role,
         answer.id,
         answer.email,
         dep = (`School: `+ answer.school)
@@ -163,9 +166,13 @@ inquirer
 }
 
 
-function saveTheFile(data) {
+function generate(data) {
      fs.writeFile("./dist/index.html", generateHTML(data), function (err) {
       if (err) {
           return console.log(err);
      }
       console.log("File created");
+    }
+     )};
+
+     generate();

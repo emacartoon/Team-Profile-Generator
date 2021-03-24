@@ -4,7 +4,7 @@ const Intern = require("../lib/Intern.js");
 const Manager = require("../lib/Manager.js");
 const members = require("/index.js");
 
-const cards = [];
+const cards = "";
 
 const header =
 `<!DOCTYPE html>
@@ -27,10 +27,7 @@ const header =
         <div class="row">
 `;
 
-Array.prototype.getRandomItem = function(){
-
-function Manager(name, ) {
-    cards.forEach(members) => {
+const cardsArr = members.map(push(cards) => {
         return `
         <div class="card">
         <div class="cardhead">
@@ -42,10 +39,9 @@ function Manager(name, ) {
         <div id="email" class="revver"><p>E-mail: <a href="mailto:${data.email}">${data.email}</a></p></div>
         <div id="dependent" class="revver"><p>${data.dep}</p></div>
         </div>
-        </div>`
-    };
+        </div>`;
+    });
     
-};
 
 const footer =`
             </div>
