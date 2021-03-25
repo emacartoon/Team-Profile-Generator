@@ -21,7 +21,7 @@
 
 * Github Repository: https://github.com/emacartoon/Team-Profile-Generator
 * Github ReadMe Page: https://emacartoon.github.io/Team-Profile-Generator
-* Video Walkthrough: TBD
+* Video Walkthrough: https://drive.google.com/file/d/155B7EuSnbN5QsIEl_4LMKIEDm1FOs2BU/view
   
 ## Installation Instructions
 
