@@ -1,4 +1,5 @@
 const Manager = require("../lib/Manager");
+
 describe("Manager", () => {
   describe("Initialization", () => {
     test("Can initialize an Manager object", () => {
@@ -6,49 +7,56 @@ describe("Manager", () => {
       expect(typeof e).toBe("object");
     });
     test("Can set name attribute with constructor", () => {
-      const name = "Clark";
-      const e = new Manager(name);
+      const name = "Tucker";
+      const e = new Manager(name, "Manager", 99, "tbeauchamp@gmail.com", 123);
       expect(e.name).toBe(name);
     });
+    test("Can set role attribute with constructor", () => {
+      const role = "Manager";
+      const e = new Manager("Tucker", role, 99, "tbeauchamp@gmail.com", 123);
+      expect(e.role).toBe(role);
+    });
     test("Can set id attribute with constructor", () => {
-      const id = 77;
-      const e = new Manager("Nick", id);
+      const id = 99;
+      const e = new Manager("Tucker", "Manager", id, "tbeauchamp@gmail.com", 123);
       expect(e.id).toBe(id);
     });
     test("Can set email attribute with constructor", () => {
-      const email = "tbeauchamp@2u.com";
-      const e = new Manager("Nick", 77, email);
+      const email = "tbeauchamp@gmail.com";
+      const e = new Manager("Tucker", "Manager", 99, email, 123);
       expect(e.email).toBe(email);
     });
-    test("Can set officeNum attribute with constructor", () => {
-      const officeNum = 133;
-      const e = new Manager("Nick", 77, "tbeauchamp@gmail.com", officeNum);
-      expect(e.officeNum).toBe(officeNum);
+    test("Can set roomNumber attribute with constructor", () => {
+      const roomNumber = 123;
+      const e = new Manager("Tucker", "Manager", 99, "tbeauchamp@gmail.com", roomNumber);
+      expect(e.roomNumber).toBe(roomNumber);
     });
   });
+
+
   describe("getters", () => {
     test("Can get name via getName() method", () => {
-      const name = "Nick";
-      const e = new Manager(name, 77, "tbeauchamp@gmail.com", 133);
+      const name = "Tucker";
+      const e = new Manager(name, "Manager", 99, "tbeauchamp@gmail.com");
       expect(e.getName()).toBe(name);
     });
+    test("Can get role via getRole() method", () => {
+      const e = new Manager("Tucker", role, 99, "tbeauchamp@gmail.com", 123);
+      expect(e.getRole()).toBe("Manager");
+    });
     test("Can get id via getId() method", () => {
-      const id = 77;
-      const e = new Manager("Nick", id, "tbeauchamp@gmail.com", 133);
+      const id = 99;
+      const e = new Manager("Tucker", "Manager", id, "tbeauchamp@gmail.com", 123);
       expect(e.getId()).toBe(id);
     });
     test("Can get email via getEmail() method", () => {
       const email = "tbeauchamp@gmail.com";
-      const e = new Manager("Nick", 77, email, 133);
+      const e = new Manager("Tucker", "Manager", 99, email, 123);
       expect(e.getEmail()).toBe(email);
     });
-    test("Can get officeNum via getOfficeNum() method", () => {
-      const e = new Manager("Nick", 77, "tbeauchamp@gmail.com", officeNum);
-      expect(e.getOfficeNum()).toBe(officeNum);
-    });
-    test("Can get role via getRole() method", () => {
-      const e = new Manager("Nick", 77, "tbeauchamp@gmail.com", 133);
-      expect(e.getRole()).toBe("Manager");
+    test("Can get roomNumber via getRoomNumber() method", () => {
+      const e = new Manager("Tucker", "Manager", 99, "tbeauchamp@gmail.com", roomNumber);
+      expect(e.getRoomNumber()).toBe(roomNumber);
     });
   });
 });
