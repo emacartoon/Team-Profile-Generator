@@ -1,11 +1,4 @@
-const Employee = require("../lib/Employee.js");
-const Engineer = require("../lib/Engineer.js");
-const Intern = require("../lib/Intern.js");
-const Manager = require("../lib/Manager.js");
-const members = require("/index.js");
-
-const cards = "";
-
+function generateHTML(members) {
 const header =
 `<!DOCTYPE html>
 <html lang="en">
@@ -27,32 +20,37 @@ const header =
         <div class="row">
 `;
 
-const cardsArr = members.map(push(cards) => {
-        return `
-        <div class="card">
+let cards = ''; // the string we add on to
+for (let i = 0; i < members.length; i++) {
+    console.log(members[i])
+    var data = members[i]
+    const card = 
+        `<div class="card">
         <div class="cardhead">
         <p id="name">${data.name}</p>
-        <p id="role">${data.role}</p>
+        <p id="role">${data.getRole()}</p>
         </div>
         <div class="cardbody">
         <div id="id" class="revver"><p>${data.id}</p></div>
         <div id="email" class="revver"><p>E-mail: <a href="mailto:${data.email}">${data.email}</a></p></div>
         <div id="dependent" class="revver"><p>${data.dep}</p></div>
         </div>
-        </div>`;
-    });
-    
+        </div>`
+    ;
+    //cardsGen.push(cards);
+    //instead of array, how do wee add to a string, "make a big string"
+     cards = cards.concat(card)
+};
 
 const footer =`
-            </div>
+</div>
 </main>
 <footer>
 <p>&copy; 2021 Emily "Emma" Lysyk</p>
 </footer>
 </body>
 </html>`;
-    
-function generateHTML() {
+
     return header + cards + footer;
 }
 

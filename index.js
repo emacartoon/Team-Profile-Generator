@@ -42,7 +42,7 @@ function determineEmployee(){
             break;
         
         case "That's all of them":
-            generateHTML();
+            generate(members);
             break;
         
     }
@@ -75,6 +75,7 @@ inquirer
     },
 ])
 .then((answer) => {
+  answer.role = "Manager"
     const manager = new Manager(
         answer.name,
         answer.role,
@@ -113,6 +114,8 @@ inquirer
     },
 ])
 .then((answer) => {
+
+  answer.role = "Engineer"
     const engineer = new Engineer (
         answer.name,
         answer.role,
@@ -153,6 +156,7 @@ inquirer
  
 ])
 .then((answer) => {
+  answer.role = "Intern"
     const intern = new Intern (
         answer.name,
         answer.role,
@@ -175,4 +179,5 @@ function generate(data) {
     }
      )};
 
-     generate();
+
+   
